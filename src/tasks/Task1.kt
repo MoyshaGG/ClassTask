@@ -1,6 +1,4 @@
-package Tasks
-
-import kotlin.random.Random
+package tasks
 
 fun main() {
     var firstPhone: Phone = Phone(109797, "Xiaomi", 0.250f)
@@ -54,7 +52,7 @@ fun main() {
         }
     }
 
-    class Person(var fullName: String, var age: Int) {
+   open class Person(var fullName: String, var age: Int) {
         fun move() {
             println("$fullName рухається")
         }
@@ -63,7 +61,11 @@ fun main() {
             println("$fullName розмовляє")
         }
 
-        constructor() : this("John", 24)
+       override fun toString(): String {
+           return "Ім'я='$fullName', вік=$age"
+       }
+
+       constructor() : this("John", 24)
     }
 
 
